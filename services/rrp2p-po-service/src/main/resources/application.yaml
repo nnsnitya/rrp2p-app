@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: rrp2p-po-service
