@@ -18,8 +18,8 @@ public class Storage {
     @Id
     private Long id;
     private LocalDateTime createdAt;
-    private String description;
     private String location;
+    private String description;
     private String state;
 
 }

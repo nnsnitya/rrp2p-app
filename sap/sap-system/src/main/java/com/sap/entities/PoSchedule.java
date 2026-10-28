@@ -17,8 +17,8 @@ import java.time.LocalDateTime;
 public class PoSchedule {
     @Id
     private Long id;
-    private Long poId;
     private Long poItem;
+    private Long poId;
     private LocalDateTime createdAt;
     private LocalDateTime scheduledOn;
     private String description;

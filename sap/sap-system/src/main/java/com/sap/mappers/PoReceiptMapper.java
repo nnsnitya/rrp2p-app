@@ -11,8 +11,8 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface PoReceiptMapper {
     @Mapping(source = "id", target = "ID")
-    @Mapping(source = "poId", target = "PO_ITM")
-    @Mapping(source = "poItem", target = "PO_ID")
+    @Mapping(source = "poId", target = "PO_ID")
+    @Mapping(source = "poItem", target = "PO_ITM")
     @Mapping(source = "createdAt", target = "CREATED_AT")
     @Mapping(source = "description", target = "DESC")
     @Mapping(source = "state", target = "STT")

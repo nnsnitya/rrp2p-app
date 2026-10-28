@@ -88,3 +88,49 @@ VALUES
 (100008, 8, 508, '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'CREATED'),
 (100009, 9, 509, '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'PENDING'),
 (100010, 10, 510, '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'APPROVED');
+
+INSERT INTO po_schedule (id, po_id, po_item, created_at, description, state)
+VALUES
+(901, 1, 501, '2026-10-20 10:15:00', 'Purchase Order for Laptops', 'S'),
+(902, 2, 502, '2026-10-20 11:30:00', 'Purchase Order for Monitors', 'NS'),
+(903, 3, 503, '2026-10-21 09:00:00', 'Purchase Order for Keyboards', 'S'),
+(904, 4, 504, '2026-10-21 14:45:00', 'Purchase Order for Mice', 'S'),
+(905, 5, 505, '2026-10-22 08:30:00', 'Purchase Order for Printers', 'PS'),
+(906, 6, 506, '2026-10-22 12:00:00', 'Purchase Order for Servers', 'GS'),
+(907, 7, 507, '2026-10-23 10:00:00', 'Purchase Order for Networking Equipment', 'S'),
+(908, 8, 508, '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'DS'),
+(909, 9, 509, '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'PS'),
+(910, 10, 510, '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'S');
+
+INSERT INTO po_state (id, updated_on, state)
+VALUES
+(601, '2026-10-20 10:15:00', 'CREATED'),
+(602, '2026-10-20 11:30:00', 'PENDING'),
+(603, '2026-10-21 09:00:00', 'APPROVED'),
+(604, '2026-10-21 14:45:00', 'REJECTED');
+
+INSERT INTO storage (location, id, created_at, description, state)
+VALUES
+("Sec 66, Noida", 801, '2026-10-20 10:15:00', 'Purchase Order for Laptops', 'OPEN'),
+("Sec 124, Noida", 802, '2026-10-20 11:30:00', 'Purchase Order for Monitors', 'OPEN'),
+("Abc Bengaluru", 803, '2026-10-21 09:00:00', 'Purchase Order for Keyboards', 'CLOSED'),
+("Xyz, Kerala", 804, '2026-10-21 14:45:00', 'Purchase Order for Mice', 'WORKING'),
+("Varli, Mumbai", 805, '2026-10-22 08:30:00', 'Purchase Order for Printers', 'CLOSED'),
+("Gomti Nagar, Lko", 806, '2026-10-22 12:00:00', 'Purchase Order for Servers', 'WORKING'),
+("MohanNagar, Gzb", 807, '2026-10-23 10:00:00', 'Purchase Order for Networking Equipment', 'OPEN'),
+("Abc Gujrat", 808, '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'OPEN'),
+("44, 39/3 Greater Noida", 809, '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'CLOSED'),
+("33/99, Kanpur", 810, '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'OPERATIONAL');
+
+INSERT INTO vendor (id, po_item, added_at, location, description, state)
+VALUES
+(1, 501, '2026-10-20 10:15:00', "Sec 66, Noida", 'Purchase Order for Laptops', 'CREATED'),
+(2, 502, '2026-10-20 11:30:00', "Sec 124, Noida", 'Purchase Order for Monitors', 'PENDING'),
+(3, 503, '2026-10-21 09:00:00', "Abc Bengaluru", 'Purchase Order for Keyboards', 'APPROVED'),
+(4, 504, '2026-10-21 14:45:00', "Xyz, Kerala", 'Purchase Order for Mice', 'REJECTED'),
+(5, 505, '2026-10-22 08:30:00', "Varli, Mumbai", 'Purchase Order for Printers', 'CREATED'),
+(6, 506, '2026-10-22 12:00:00', "Gomti Nagar, Lko", 'Purchase Order for Servers', 'PENDING'),
+(7, 507, '2026-10-23 10:00:00', "MohanNagar, Gzb", 'Purchase Order for Networking Equipment', 'APPROVED'),
+(8, 508, '2026-10-24 16:20:00', "Abc Gujrat", 'Purchase Order for Storage Devices', 'CREATED'),
+(9, 509, '2026-10-25 09:45:00', "44, 39/3 Greater Noida", 'Purchase Order for Office Furniture', 'PENDING'),
+(10, 510, '2026-10-26 13:15:00', "33/99, Kanpur", 'Purchase Order for Software Licenses', 'APPROVED');

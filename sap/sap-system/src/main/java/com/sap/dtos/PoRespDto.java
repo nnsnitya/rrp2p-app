@@ -10,10 +10,10 @@ public record PoRespDto(
         List<PoPaymentDto> PAYMNT,
         List<PoPlantDto> PLANT,
         List<PoReceiptDto> RCPT,
-//        List<PoScheduleDto> SCHEDULE,
-//        List<PoStateDto> PO_STATE,
-//        List<StorageDto> STORE,
-//        List<VendorDto> VENDOR,
+        List<PoScheduleDto> SCHEDULE,
+        List<PoStateDto> PO_STATE,
+        List<StorageDto> STORE,
+        List<VendorDto> VENDOR,
         String TYPE
         ) {
 }
