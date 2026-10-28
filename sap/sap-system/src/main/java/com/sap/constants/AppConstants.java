@@ -5,6 +5,6 @@ public final class AppConstants {
         throw new AssertionError("No instances for this!");
     }
 
-    public static final Integer DAYS = 2;
+    public static final Integer DAYS = 4;
 
 }
