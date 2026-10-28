@@ -62,3 +62,16 @@ VALUES
 (10008, 8, 508, '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'INITIATED'),
 (10009, 9, 509, '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'PENDING'),
 (10010, 10, 510, '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'APPROVED');
+
+INSERT INTO po_plant (item_id, item_name, created_at, description, state, id, name, location)
+VALUES
+(501, "Mouse", '2026-10-20 10:15:00', 'Purchase Order for Laptops', 'OPEN', 701, "JK Mouses", "Moradabad"),
+(502, "Computer", '2026-10-20 11:30:00', 'Purchase Order for Monitors', 'WORKING', 702, "AK DELL Computers", "Gorakhpur"),
+(503, "Keyboard", '2026-10-21 09:00:00', 'Purchase Order for Keyboards', 'WORKING', 703, "MPP Accesories", "Bhiwandi"),
+(504, "Samsung Mobile", '2026-10-21 14:45:00', 'Purchase Order for Mice', 'TEMPARORY CLOSED', 704, "Noida Mobiles Ltd", "Noida"),
+(505, "AI+ Nova Ultra", '2026-10-22 08:30:00', 'Purchase Order for Printers', 'OPEN', 705, "Sobhit Mobiles", "Bengaluru"),
+(506, "Peanut", '2026-10-22 12:00:00', 'Purchase Order for Servers', 'WORKING', 706, "Abc Dry Fruits", "Kanpur"),
+(507, "Jogur Jeans", '2026-10-23 10:00:00', 'Purchase Order for Networking Equipment', 'OPEN', 707, "Jogur Jeans Ltd", "Mirzapur"),
+(508, "Zudio T-Shirt", '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'PARTIALLY WORKING', 708, "Zudio Clothing Ltd", "Greater Noida"),
+(509, "Zudio Sports Shoe", '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'WORKING', 709, "Zudio Clothing Ltd", "Jaipur"),
+(510, "Boom Perfume", '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'OPEN', 710, "Dada cents", "Varanasi");

@@ -8,7 +8,7 @@ public record PoRespDto(
         List<PoItemDto> PO_ITMS,
         List<PoMaterialDto> MATERIAL,
         List<PoPaymentDto> PAYMNT,
-//        List<PoPlantDto> PLANT,
+        List<PoPlantDto> PLANT,
 //        List<PoReceiptDto> RCPT,
 //        List<PoScheduleDto> SCHEDULE,
 //        List<PoStateDto> PO_STATE,
