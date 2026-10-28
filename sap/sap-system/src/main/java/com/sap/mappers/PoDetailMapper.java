@@ -1,18 +1,23 @@
 package com.sap.mappers;
 
-import com.sap.dtos.PO_DATA;
+import com.sap.dtos.PoDetailDto;
 import com.sap.entities.PoDetail;
-import org.mapstruct.InjectionStrategy;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface PoDetailMapper {
-    PO_DATA toDto(PoDetail poDetail);
+    @Mapping(source = "poId", target = "POID")
+    @Mapping(source = "createdAt", target = "CREATED_AT")
+    @Mapping(source = "description", target = "DESC")
+    @Mapping(source = "state", target = "STT")
+    PoDetailDto toDto(PoDetail poDetail);
 
-    PoDetail toEntity(PO_DATA poData);
+    @InheritInverseConfiguration
+    PoDetail toEntity(PoDetailDto poData);
 
-    List<PO_DATA> toDtoList(List<PoDetail> poDataList);
+    List<PoDetailDto> toDtoList(List<PoDetail> poDataList);
 }
