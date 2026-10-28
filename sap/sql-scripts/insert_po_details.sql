@@ -75,3 +75,16 @@ VALUES
 (508, "Zudio T-Shirt", '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'PARTIALLY WORKING', 708, "Zudio Clothing Ltd", "Greater Noida"),
 (509, "Zudio Sports Shoe", '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'WORKING', 709, "Zudio Clothing Ltd", "Jaipur"),
 (510, "Boom Perfume", '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'OPEN', 710, "Dada cents", "Varanasi");
+
+INSERT INTO po_receipt (id, po_id, po_item, created_at, description, state)
+VALUES
+(100001, 1, 501, '2026-10-20 10:15:00', 'Purchase Order for Laptops', 'CREATED'),
+(100002, 2, 502, '2026-10-20 11:30:00', 'Purchase Order for Monitors', 'PENDING'),
+(100003, 3, 503, '2026-10-21 09:00:00', 'Purchase Order for Keyboards', 'APPROVED'),
+(100004, 4, 504, '2026-10-21 14:45:00', 'Purchase Order for Mice', 'REJECTED'),
+(100005, 5, 505, '2026-10-22 08:30:00', 'Purchase Order for Printers', 'CREATED'),
+(100006, 6, 506, '2026-10-22 12:00:00', 'Purchase Order for Servers', 'PENDING'),
+(100007, 7, 507, '2026-10-23 10:00:00', 'Purchase Order for Networking Equipment', 'APPROVED'),
+(100008, 8, 508, '2026-10-24 16:20:00', 'Purchase Order for Storage Devices', 'CREATED'),
+(100009, 9, 509, '2026-10-25 09:45:00', 'Purchase Order for Office Furniture', 'PENDING'),
+(100010, 10, 510, '2026-10-26 13:15:00', 'Purchase Order for Software Licenses', 'APPROVED');

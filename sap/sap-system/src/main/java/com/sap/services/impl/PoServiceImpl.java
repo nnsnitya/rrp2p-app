@@ -34,6 +34,7 @@ public class PoServiceImpl implements PoService {
     private final PoMaterialMapper poMaterialMapper;
     private final PoPaymentMapper poPaymentMapper;
     private final PoPlantMapper poPlantMapper;
+    private final PoReceiptMapper poReceiptMapper;
 
     @Override
     public PoRespDto getLast30DaysRecords() {
@@ -44,7 +45,7 @@ public class PoServiceImpl implements PoService {
         List<PoMaterial> poMaterials = poMaterialRepository.findRecordsFromDate(startDate);
         List<PoPayment> poPayments = poPaymentRepository.findRecordsFromDate(startDate);
         List<PoPlant> poPlants = poPlantRepository.findRecordsFromDate(startDate);
-//        List<PoReceipt> poReceipts = poReceiptRepository.findRecordsFromDate(startDate);
+        List<PoReceipt> poReceipts = poReceiptRepository.findRecordsFromDate(startDate);
 //        List<PoSchedule> poSchedules = poScheduleRepository.findRecordsFromDate(startDate);
 //        List<PoState> poStates = poStateRepository.findRecordsFromDate(startDate);
 //        List<Storage> storages = storageRepository.findRecordsFromDate(startDate);
@@ -56,9 +57,10 @@ public class PoServiceImpl implements PoService {
         List<PoMaterialDto> poMaterialDtos = poMaterialMapper.toDtoList(poMaterials);
         List<PoPaymentDto> poPaymentDtos = poPaymentMapper.toDtoList(poPayments);
         List<PoPlantDto> poPlantDtos = poPlantMapper.toDtoList(poPlants);
+        List<PoReceiptDto> poReceiptDtos = poReceiptMapper.toDtoList(poReceipts);
 
 
         return new PoRespDto(poDtos, poHistoryDtos, poItemDtos, poMaterialDtos,
-                poPaymentDtos, poPlantDtos, "PO");
+                poPaymentDtos, poPlantDtos, poReceiptDtos, "PO");
     }
 }
