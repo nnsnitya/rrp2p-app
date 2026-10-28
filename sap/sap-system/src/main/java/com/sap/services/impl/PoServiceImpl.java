@@ -2,7 +2,6 @@ package com.sap.services.impl;
 
 import com.sap.constants.AppConstants;
 import com.sap.dtos.*;
-import com.sap.entities.*;
 import com.sap.mappers.*;
 import com.sap.repositories.*;
 import com.sap.services.PoService;
@@ -43,30 +42,19 @@ public class PoServiceImpl implements PoService {
     @Override
     public PoRespDto getLast30DaysRecords() {
         LocalDateTime startDate = LocalDateTime.now().minusDays(AppConstants.DAYS);
-        List<PoDetail> poDetails = poDetailRepository.findRecordsFromDate(startDate);
-        List<PoHistory> poHistorys = poHistoryRepository.findRecordsFromDate(startDate);
-        List<PoItem> poItems = poItemRepository.findRecordsFromDate(startDate);
-        List<PoMaterial> poMaterials = poMaterialRepository.findRecordsFromDate(startDate);
-        List<PoPayment> poPayments = poPaymentRepository.findRecordsFromDate(startDate);
-        List<PoPlant> poPlants = poPlantRepository.findRecordsFromDate(startDate);
-        List<PoReceipt> poReceipts = poReceiptRepository.findRecordsFromDate(startDate);
-        List<PoSchedule> poSchedules = poScheduleRepository.findRecordsFromDate(startDate);
-        List<PoState> poStates = poStateRepository.findRecordsFromDate(startDate);
-        List<Storage> storages = storageRepository.findRecordsFromDate(startDate);
-        List<Vendor> vendors = vendorRepository.findRecordsFromDate(startDate);
-        //put in all different dtos
-        List<PoDetailDto> poDtos = poDetailMapper.toDtoList(poDetails);
-        List<PoHistoryDto> poHistoryDtos = poHistoryMapper.toDtoList(poHistorys);
-        List<PoItemDto> poItemDtos = poItemMapper.toDtoList(poItems);
-        List<PoMaterialDto> poMaterialDtos = poMaterialMapper.toDtoList(poMaterials);
-        List<PoPaymentDto> poPaymentDtos = poPaymentMapper.toDtoList(poPayments);
-        List<PoPlantDto> poPlantDtos = poPlantMapper.toDtoList(poPlants);
-        List<PoReceiptDto> poReceiptDtos = poReceiptMapper.toDtoList(poReceipts);
-        List<PoScheduleDto> poScheduleDtos = poScheduleMapper.toDtoList(poSchedules);
-        List<PoStateDto> poStateDtos = poStateMapper.toDtoList(poStates);
-        List<StorageDto> storageDtos = storageMapper.toDtoList(storages);
-        List<VendorDto> vendorDtos = vendorMapper.toDtoList(vendors);
 
+        //put in all different dtos
+        List<PoDetailDto> poDtos = poDetailMapper.toDtoList(poDetailRepository.findRecordsFromDate(startDate));
+        List<PoHistoryDto> poHistoryDtos = poHistoryMapper.toDtoList(poHistoryRepository.findRecordsFromDate(startDate));
+        List<PoItemDto> poItemDtos = poItemMapper.toDtoList(poItemRepository.findRecordsFromDate(startDate));
+        List<PoMaterialDto> poMaterialDtos = poMaterialMapper.toDtoList(poMaterialRepository.findRecordsFromDate(startDate));
+        List<PoPaymentDto> poPaymentDtos = poPaymentMapper.toDtoList(poPaymentRepository.findRecordsFromDate(startDate));
+        List<PoPlantDto> poPlantDtos = poPlantMapper.toDtoList(poPlantRepository.findRecordsFromDate(startDate));
+        List<PoReceiptDto> poReceiptDtos = poReceiptMapper.toDtoList(poReceiptRepository.findRecordsFromDate(startDate));
+        List<PoScheduleDto> poScheduleDtos = poScheduleMapper.toDtoList(poScheduleRepository.findRecordsFromDate(startDate));
+        List<PoStateDto> poStateDtos = poStateMapper.toDtoList(poStateRepository.findRecordsFromDate(startDate));
+        List<StorageDto> storageDtos = storageMapper.toDtoList(storageRepository.findRecordsFromDate(startDate));
+        List<VendorDto> vendorDtos = vendorMapper.toDtoList(vendorRepository.findRecordsFromDate(startDate));
 
         return new PoRespDto(poDtos, poHistoryDtos, poItemDtos, poMaterialDtos,
                 poPaymentDtos, poPlantDtos, poReceiptDtos, poScheduleDtos,
