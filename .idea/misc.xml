@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/sap/sap-system/pom.xml" />
+        <option value="$PROJECT_DIR$/services/rrp2p-po-service/pom.xml" />
       </list>
     </option>
   </component>
