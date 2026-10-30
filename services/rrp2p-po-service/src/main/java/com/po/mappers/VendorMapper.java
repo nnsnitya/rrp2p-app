@@ -21,5 +21,5 @@ public interface VendorMapper {
     @InheritInverseConfiguration
     Vendor toEntity(VendorDto vendorDto);
 
-    List<VendorDto> toDtoList(List<Vendor> vendors);
+    List<Vendor> toEntityList(List<VendorDto> vendorDtos);
 }

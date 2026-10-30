@@ -21,5 +21,5 @@ public interface PoReceiptMapper {
     @InheritInverseConfiguration
     PoReceipt toEntity(PoReceiptDto receiptDto);
 
-    List<PoReceiptDto> toDtoList(List<PoReceipt> poReceipts);
+    List<PoReceipt> toEntityList(List<PoReceiptDto> receiptDtos);
 }

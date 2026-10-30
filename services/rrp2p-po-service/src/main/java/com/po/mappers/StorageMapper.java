@@ -20,5 +20,5 @@ public interface StorageMapper {
     @InheritInverseConfiguration
     Storage toEntity(StorageDto storageDto);
 
-    List<StorageDto> toDtoList(List<Storage> storages);
+    List<Storage> toEntityList(List<StorageDto> storageDtos);
 }

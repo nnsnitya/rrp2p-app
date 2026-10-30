@@ -1,6 +1,7 @@
 package com.po.services.impl;
 
 import com.po.config.SapApiClient;
+import com.po.dtos.PoReceiptDto;
 import com.po.dtos.PoRespDto;
 import com.po.entities.*;
 import com.po.mappers.*;
@@ -26,6 +27,11 @@ public class PoServiceImpl implements PoService {
     private final PoMaterialRepository materialRepo;
     private final PoPaymentRepository paymentRepo;
     private final PoPlantRepository plantRepo;
+    private final PoReceiptRepository receiptRepo;
+    private final PoScheduleRepository scheduleRepo;
+    private final PoStateRepository stateRepo;
+    private final StorageRepository storageRepo;
+    private final VendorRepository vendorRepo;
 
     private final PoDetailMapper poMapper;
     private final PoHistoryMapper historyMapper;
@@ -33,6 +39,11 @@ public class PoServiceImpl implements PoService {
     private final PoMaterialMapper materialMapper;
     private final PoPaymentMapper paymentMapper;
     private final PoPlantMapper plantMapper;
+    private final PoReceiptMapper receiptMapper;
+    private final PoScheduleMapper scheduleMapper;
+    private final PoStateMapper stateMapper;
+    private final StorageMapper storageMapper;
+    private final VendorMapper vendorMapper;
 
     //save po detail
 //    public void savePoDetail(List<PO_DATA> poDataList)
@@ -46,12 +57,19 @@ public class PoServiceImpl implements PoService {
 
                 }
         );
+        System.out.println(respJson);
+        System.out.println(respObj);
         System.out.println(respObj.PO_DATA());
         System.out.println(respObj.HISTORY());
         System.out.println(respObj.PO_ITMS());
         System.out.println(respObj.MATERIAL());
         System.out.println(respObj.PAYMNT());
         System.out.println(respObj.PLANT());
+        System.out.println(respObj.RCPT());
+        System.out.println(respObj.SCHEDULE());
+        System.out.println(respObj.PO_STATE());
+        System.out.println(respObj.STORE());
+        System.out.println(respObj.VENDOR());
 
         List<PoDetail> poDetails = poDetailRepo.saveAll(poMapper.toEntityList(respObj.PO_DATA()));
         List<PoHistory> histories = historyRepo.saveAll(historyMapper.toEntityList(respObj.HISTORY()));
@@ -59,6 +77,10 @@ public class PoServiceImpl implements PoService {
         List<PoMaterial> materials = materialRepo.saveAll(materialMapper.toEntityList(respObj.MATERIAL()));
         List<PoPayment> payments = paymentRepo.saveAll(paymentMapper.toEntityList(respObj.PAYMNT()));
         List<PoPlant> plants = plantRepo.saveAll(plantMapper.toEntityList(respObj.PLANT()));
-
+        List<PoReceipt> receipts = receiptRepo.saveAll(receiptMapper.toEntityList(respObj.RCPT()));
+        List<PoSchedule> schedules = scheduleRepo.saveAll(scheduleMapper.toEntityList(respObj.SCHEDULE()));
+        List<PoState> states = stateRepo.saveAll(stateMapper.toEntityList(respObj.PO_STATE()));
+        List<Storage> storages = storageRepo.saveAll(storageMapper.toEntityList(respObj.STORE()));
+        List<Vendor> vendors = vendorRepo.saveAll(vendorMapper.toEntityList(respObj.VENDOR()));
     }
 }

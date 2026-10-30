@@ -19,5 +19,5 @@ public interface PoStateMapper {
     @InheritInverseConfiguration
     PoState toEntity(PoStateDto poStateDto);
 
-    List<PoStateDto> toDtoList(List<PoState> poStates);
+    List<PoState> toEntityList(List<PoStateDto> stateDtos);
 }

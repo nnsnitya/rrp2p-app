@@ -22,5 +22,5 @@ public interface PoScheduleMapper {
     @InheritInverseConfiguration
     PoSchedule toEntity(PoScheduleDto scheduleDto);
 
-    List<PoScheduleDto> toDtoList(List<PoSchedule> poSchedules);
+    List<PoSchedule> toEntityList(List<PoScheduleDto> scheduleDtos);
 }
