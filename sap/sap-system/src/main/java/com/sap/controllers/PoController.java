@@ -17,6 +17,7 @@ public class PoController {
 
     @GetMapping("/po")
     public ResponseEntity<?> getLast30DaysRecords() {
+        System.out.println("sap records requested...");
         PoRespDto last30DaysRecords = poService.getLast30DaysRecords();
         return new ResponseEntity<>(last30DaysRecords, HttpStatus.OK);
     }
