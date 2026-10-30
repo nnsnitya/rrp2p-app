@@ -25,13 +25,14 @@ public class PoServiceImpl implements PoService {
     private final PoItemRepository itemRepo;
     private final PoMaterialRepository materialRepo;
     private final PoPaymentRepository paymentRepo;
+    private final PoPlantRepository plantRepo;
 
     private final PoDetailMapper poMapper;
     private final PoHistoryMapper historyMapper;
     private final PoItemMapper itemMapper;
     private final PoMaterialMapper materialMapper;
     private final PoPaymentMapper paymentMapper;
-
+    private final PoPlantMapper plantMapper;
 
     //save po detail
 //    public void savePoDetail(List<PO_DATA> poDataList)
@@ -50,12 +51,14 @@ public class PoServiceImpl implements PoService {
         System.out.println(respObj.PO_ITMS());
         System.out.println(respObj.MATERIAL());
         System.out.println(respObj.PAYMNT());
+        System.out.println(respObj.PLANT());
 
         List<PoDetail> poDetails = poDetailRepo.saveAll(poMapper.toEntityList(respObj.PO_DATA()));
         List<PoHistory> histories = historyRepo.saveAll(historyMapper.toEntityList(respObj.HISTORY()));
         List<PoItem> items = itemRepo.saveAll(itemMapper.toEntityList(respObj.PO_ITMS()));
         List<PoMaterial> materials = materialRepo.saveAll(materialMapper.toEntityList(respObj.MATERIAL()));
         List<PoPayment> payments = paymentRepo.saveAll(paymentMapper.toEntityList(respObj.PAYMNT()));
+        List<PoPlant> plants = plantRepo.saveAll(plantMapper.toEntityList(respObj.PLANT()));
 
     }
 }

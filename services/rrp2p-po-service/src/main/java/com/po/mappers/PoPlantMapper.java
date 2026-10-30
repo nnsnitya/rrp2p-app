@@ -23,5 +23,5 @@ public interface PoPlantMapper {
     @InheritInverseConfiguration
     PoPlant toEntity(PoPlantDto plantDto);
 
-    List<PoPlantDto> toDtoList(List<PoPlant> poPlants);
+    List<PoPlant> toEntityList(List<PoPlantDto> plantDtos);
 }
