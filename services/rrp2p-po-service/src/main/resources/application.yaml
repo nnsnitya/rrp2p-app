@@ -1,3 +1,21 @@
+server:
+  port: 6162
 spring:
   application:
     name: rrp2p-po-service
+  datasource:
+    url: jdbc:mysql://localhost:3307/po_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+sap:
+  api:
+    url: http://localhost:6161/api/v1/po/po
+app:
+  cron:
+    schedule: 0 0/30 * * * *
