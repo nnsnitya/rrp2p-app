@@ -21,5 +21,5 @@ public interface PoMaterialMapper {
     @InheritInverseConfiguration
     PoMaterial toEntity(PoMaterialDto matDto);
 
-    List<PoMaterialDto> toDtoList(List<PoMaterial> poMaterials);
+    List<PoMaterial> toEntityList(List<PoMaterialDto> materialDtos);
 }
