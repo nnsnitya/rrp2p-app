@@ -19,5 +19,5 @@ public interface PoDetailMapper {
     @InheritInverseConfiguration
     PoDetail toEntity(PoDetailDto poData);
 
-    List<PoDetailDto> toDtoList(List<PoDetail> poDataList);
+    List<PoDetail> toEntityList(List<PoDetailDto> poDetailDtos);
 }

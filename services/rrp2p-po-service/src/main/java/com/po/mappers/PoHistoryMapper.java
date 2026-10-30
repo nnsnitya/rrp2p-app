@@ -21,5 +21,5 @@ public interface PoHistoryMapper {
     @InheritInverseConfiguration
     PoHistory toEntity(PoHistoryDto historyData);
 
-    List<PoHistoryDto> toDtoList(List<PoHistory> poHistoryList);
+    List<PoHistory> toEntityList(List<PoHistoryDto> poHistoryDtos);
 }

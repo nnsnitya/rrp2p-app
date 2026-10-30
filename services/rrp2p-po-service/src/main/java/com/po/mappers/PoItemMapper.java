@@ -24,5 +24,5 @@ public interface PoItemMapper {
     @InheritInverseConfiguration
     PoItem toEntity(PoItemDto itmData);
 
-    List<PoItemDto> toDtoList(List<PoItem> poItmList);
+    List<PoItem> toEntityList(List<PoItemDto> itmDtos);
 }
