@@ -2,18 +2,9 @@ package com.po.services.impl;
 
 import com.po.config.SapApiClient;
 import com.po.dtos.PoRespDto;
-import com.po.entities.PoDetail;
-import com.po.entities.PoHistory;
-import com.po.entities.PoItem;
-import com.po.entities.PoMaterial;
-import com.po.mappers.PoDetailMapper;
-import com.po.mappers.PoHistoryMapper;
-import com.po.mappers.PoItemMapper;
-import com.po.mappers.PoMaterialMapper;
-import com.po.repositories.PoDetailRepository;
-import com.po.repositories.PoHistoryRepository;
-import com.po.repositories.PoItemRepository;
-import com.po.repositories.PoMaterialRepository;
+import com.po.entities.*;
+import com.po.mappers.*;
+import com.po.repositories.*;
 import com.po.services.PoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -33,11 +24,13 @@ public class PoServiceImpl implements PoService {
     private final PoHistoryRepository historyRepo;
     private final PoItemRepository itemRepo;
     private final PoMaterialRepository materialRepo;
+    private final PoPaymentRepository paymentRepo;
 
     private final PoDetailMapper poMapper;
     private final PoHistoryMapper historyMapper;
     private final PoItemMapper itemMapper;
     private final PoMaterialMapper materialMapper;
+    private final PoPaymentMapper paymentMapper;
 
 
     //save po detail
@@ -56,13 +49,13 @@ public class PoServiceImpl implements PoService {
         System.out.println(respObj.HISTORY());
         System.out.println(respObj.PO_ITMS());
         System.out.println(respObj.MATERIAL());
-
+        System.out.println(respObj.PAYMNT());
 
         List<PoDetail> poDetails = poDetailRepo.saveAll(poMapper.toEntityList(respObj.PO_DATA()));
         List<PoHistory> histories = historyRepo.saveAll(historyMapper.toEntityList(respObj.HISTORY()));
-        List<PoItem> tems = itemRepo.saveAll(itemMapper.toEntityList(respObj.PO_ITMS()));
+        List<PoItem> items = itemRepo.saveAll(itemMapper.toEntityList(respObj.PO_ITMS()));
         List<PoMaterial> materials = materialRepo.saveAll(materialMapper.toEntityList(respObj.MATERIAL()));
-
+        List<PoPayment> payments = paymentRepo.saveAll(paymentMapper.toEntityList(respObj.PAYMNT()));
 
     }
 }

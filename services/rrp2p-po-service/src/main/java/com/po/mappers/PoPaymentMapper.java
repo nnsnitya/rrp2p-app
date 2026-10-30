@@ -21,5 +21,5 @@ public interface PoPaymentMapper {
     @InheritInverseConfiguration
     PoPayment toEntity(PoPaymentDto payDto);
 
-    List<PoPaymentDto> toDtoList(List<PoPayment> poPayments);
+    List<PoPayment> toEntityList(List<PoPaymentDto> paymentDtos);
 }
