@@ -1,0 +1,34 @@
+.base-page {
+    /* background-image: url("../assets/images/bg_image.jpg"); */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+}
+
+.app-content {
+    background-repeat: repeat-y;
+}
+
+.page-content {
+    flex: 1;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    /* background: rgba(0, 0, 0, .1); */
+    background: rgba(33, 37, 41, 0.5);
+    color: white;
+}

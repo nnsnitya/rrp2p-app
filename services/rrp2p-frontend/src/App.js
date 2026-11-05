@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contactus from './pages/Contactus';
+import Services from './pages/Services';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        {/* <ToastContainer position='bottom-right' /> */}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          {/* <Route path='/login' element={<Login />} /> */}
+
+          {/* <Route path='/signup' element={<Signup />} /> */}
+          {/* <Route path='/posts/:postId' element={<PostDetail />} /> */}
+          {/* <Route path='/categories/:categoryId' element={<Categories />} /> */}
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<Services />} />
+          <Route path='/contactus' element={<Contactus />} />
+          {/* <Route path='/profile' element={<Profile />} /> */}
+
+          {/* <Route path='/user' element={<Privateroutes />}>
+            <Route path='dashboard' element={<Userdashboard />} />
+            <Route path='profile-info' element={<Profileinfo />} />
+          </Route> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
