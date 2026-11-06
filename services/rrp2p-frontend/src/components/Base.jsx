@@ -18,28 +18,15 @@ const Base = ({ title = "Welcome to our website", children }) => {
             <Row className="g-0">
 
                 {/* Sidebar */}
-                {isSidebarOpen && (
-                    <Col md={3} className="fixed-sidebar">
+                <Col md={isSidebarOpen ? 3 : 1} className="fixed-sidebar">
 
-                        <Button onClick={toggleSidebar}>
-                            Hide Sidebar
-                        </Button>
 
-                        <SideBar />
-                    </Col>
-                )}
+                    <SideBar collapsed={!isSidebarOpen} toggleSidebar={toggleSidebar} />
+                </Col>
 
                 {/* Main Content */}
-                <Col md={isSidebarOpen ? 9 : 12}>
+                <Col md={isSidebarOpen ? 9 : 11}>
                     <main className="page-content">
-
-                        {/* Show toggle when sidebar is hidden */}
-                        {!isSidebarOpen && (
-                            <Button onClick={toggleSidebar}>
-                                Show Sidebar
-                            </Button>
-                        )}
-
                         {children}
                     </main>
                 </Col>
